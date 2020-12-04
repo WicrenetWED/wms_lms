@@ -2,7 +2,7 @@
 
  [editor on GitHub](https://github.com/WicrenetWED/wms/edit/gh-pages/index.md) 
  
-  [收货完成接口](https://github.com/WicrenetWED/wms/edit/gh-pages/ReceiptCompletedWaybills.md) 
+  [收货完成接口](https://github.com/WicrenetWED/wms/gh-pages/ReceiptCompletedWaybills.md) 
   
   
    [editor on GitHub](https://github.com/WicrenetWED/wms/edit/gh-pages/index.md) 
