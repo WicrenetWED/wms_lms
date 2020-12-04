@@ -1,3 +1,5 @@
+<a name="#Markdown">点击跳到嵌入的HTML锚点</a>
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/WicrenetWED/wms/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
