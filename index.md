@@ -1,49 +1,19 @@
-<a name="#Markdown">点击跳到嵌入的HTML锚点</a>
+#  													LMS 与 WMS 接口开发文档
 
- [editor on GitHub](https://github.com/WicrenetWED/wms/edit/gh-pages/index.md) 
- 
-  [收货完成接口](https://wicrenetwed.github.io/wms/ReceiptCompletedWaybills) 
-  
-  
-   [editor on GitHub](https://github.com/WicrenetWED/wms/edit/gh-pages/index.md) 
-   
-   
-    [editor on GitHub](https://github.com/WicrenetWED/wms/edit/gh-pages/index.md) 
 
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/WicrenetWED/wms/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+| 序号 | 接口名称                                                     | 方向              | 业务场景 | LMS 状态 | WMS 状态 | 部署 | 联调结果 |
+| ---- | ------------------------------------------------------------ | ----------------- | -------- | -------- | -------- | ---- | -------- |
+| #3   | 入库通知下发                                                 | ***LMS***  -> WMS |          |          |          |      |          |
+| #4   | [收货完成](https://wicrenetwed.github.io/wms/ReceiptCompletedWaybills) | WMS -> ***LMS***  |          |          |          |      |          |
+| #5   | 发货通知                                                     | ***LMS*** -> WMS  |          |          |          |      |          |
+| #6   | 确认出仓                                                     | WMS -> ***LMS***  |          |          |          |      |          |
+| #7   | 反馈盘点结果                                                 | WMS -> ***LMS***  |          |          |          |      |          |
+| #8   | 冻结不良品                                                   | WMS -> ***LMS***  |          |          |          |      |          |
+| #9   | 解冻不良品                                                   | WMS -> ***LMS***  |          |          |          |      |          |
+| #10  | 产品相关主数据同步                                           | ***LMS*** -> WMS  |          |          |          |      |          |
+| #11  | CRM相关主数据同步                                            | ***LMS*** -> WMS  |          |          |          |      |          |
+| #12  | 库存转移                                                     | WMS -> ***LMS***  |          |          |          |      |          |
+| #13  | SDS与QAC文件同步                                             | ***LMS*** -> WMS  |          |          |          |      |          |
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/WicrenetWED/wms/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
