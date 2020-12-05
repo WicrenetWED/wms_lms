@@ -16,9 +16,11 @@
 
 **方式**：POST 
 
-**服务提供public 方法名及参数类型**：**issueOutboundOrdersData**(XML **xmlData**)
+**服务提供public 方法名及参数类型**：
 
-**返回值类型：**
+```
+public string issueOutboundOrders(XML xmlData)
+```
 
 **WCF/Web Service开发技术文档参考如下：**
 

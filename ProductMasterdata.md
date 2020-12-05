@@ -1,6 +1,6 @@
 # 10 产品主数据
 
-## 1 接口说明
+## 10.1 接口说明
 
 | 项目     | 描述       |
 | -------- | ---------- |
@@ -9,7 +9,7 @@
 | 实时性   | 实时       |
 | 说明     |            |
 
-## 2 请求URL与方式
+## 10.2 请求URL与方式
 
 说明：
 
@@ -23,7 +23,7 @@
 public string ReceiveProductData(string inputData)
 ```
 
-协议：soap协议
+**协议：soap协议**
 
 | WMS厂商 | 服务端地址 | 方法名称                 | 参数名称 |
 | ------- | ---------- | ------------------------ | -------- |
@@ -34,9 +34,9 @@ public string ReceiveProductData(string inputData)
 
 
 
-## 3 输入参数  
+## 10.3 输入参数  
 
-| 参数名称                 | 中文名称     | 类型           | 备注                           |
+| 参数名称                 | 描述         | 类型           | 备注                           |
 | ------------------------ | ------------ | -------------- | ------------------------------ |
 | ItemId                   | 物料编号     | String         |                                |
 | ProductName              | 产品名称     | String         |                                |
@@ -56,13 +56,13 @@ public string ReceiveProductData(string inputData)
 | InventDangerous          | 危险品       | Enum           | N, DG9,DG3                     |
 | ExtendField              | 扩展字段     | String         | 支持后期扩展                   |
 
-## 4 输出参数
+## 10.4 输出参数
 
-| 参数名称   | 中文名称 | 类型   | 备注 |      |
-| ---------- | -------- | ------ | ---- | ---- |
-| StatusCode | 状态码   | int    |      |      |
-| Message    | 消息     | string |      |      |
-| Data       | 数据     | object |      |      |
+| 参数名称   | 描述   | 类型   | 备注 |      |
+| ---------- | ------ | ------ | ---- | ---- |
+| StatusCode | 状态码 | string |      |      |
+| Message    | 消息   | string |      |      |
+| Data       | 数据   | object |      |      |
 
 Status Code说明：
 
@@ -70,10 +70,10 @@ WMS接收到数据后，提供的反馈状态码：
 
 | StatusCode | 描述                              |
 | :--------- | --------------------------------- |
-| 0          | 接收成功                          |
-| -1         | 接收失败，失败时需提供Message信息 |
+| Y          | 接收成功                          |
+| N          | 接收失败，失败时需提供Message信息 |
 
-## 5 输入示例
+## 10.5 输入示例
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -113,11 +113,11 @@ WMS接收到数据后，提供的反馈状态码：
 
 
 
-## 6 返回示例
+## 10.6 返回示例
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
-	<statusCode>0</statusCode>
+	<statusCode>Y</statusCode>
 	<message>接收成功</message>
 	<data></data>
 ```

@@ -16,9 +16,13 @@
 
 **方式**：POST 
 
-**服务提供public 方法名及参数类型**：**issueInboundOrdersData**(XML **xmlData**)
+**协议:  SOAP**
 
-**返回值类型：**
+**服务提供public 方法名及参数类型**：
+
+```
+public string issueInboundOrders(XML xmlData)
+```
 
 **WCF/Web Service开发技术文档参考如下：**
 
@@ -60,7 +64,7 @@
 
 | 参数       | 值                                             | 示例                   |
 | ---------- | ---------------------------------------------- | ---------------------- |
-| StatusCode | 1： 成功  0：失败                              | 1                      |
+| StatusCode | Y： 成功  N：失败                              | Y                      |
 | Message    | 失败后的提示信息，具体类型需要根据实际情况沟通 | 例如：已经启运无法变更 |
 
 ## 3.5 下发入库订单示例

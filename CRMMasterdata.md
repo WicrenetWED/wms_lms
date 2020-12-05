@@ -1,6 +1,6 @@
-# 10.1 CRM主数据
+# 11 CRM主数据
 
-## 1 接口说明
+## 11.1 接口说明
 
 | 项目     | 描述      |
 | -------- | --------- |
@@ -9,18 +9,18 @@
 | 实时性   | 实时      |
 | 说明     |           |
 
-## 2 请求URL与方式
+## 11.2 请求URL与方式
 
 说明：
 
 由于产品LMS产品主数据需要实时同步给到多个WMS系统，为了方便统处理，
 
-故约定在WMS写该接口时，统一方法名使用RecieveCRMMasterData，参数
+故约定在WMS写该接口时，统一方法名使用**RecieveCRMMasterData**，参数
 
 方法声明示例： 
 
 ```C#
-public string RecieveCRMMasterData(string inputData)
+public string RecieveCRMMasterData(XML inputData)
 ```
 
 协议：soap协议
@@ -34,9 +34,9 @@ public string RecieveCRMMasterData(string inputData)
 
 
 
-## 3 输入参数说明
+## 11.3 输入参数说明
 
-| 参数名称       | 中文名     | 数据类型 | 备注           |
+| 参数名称       | 描述       | 数据类型 | 备注           |
 | -------------- | ---------- | -------- | -------------- |
 | ShipToCode     | 客户编号   | String   |                |
 | ShipToCodeName | 客户名称   | String   |                |
@@ -45,19 +45,19 @@ public string RecieveCRMMasterData(string inputData)
 
 需求项结构字段说明：
 
-| 参数名称     | 中文名     | 数据类型 | 备注 |
+| 参数名称     | 描述       | 数据类型 | 备注 |
 | ------------ | ---------- | -------- | ---- |
 | ItemName     | 需求项名称 | String   |      |
 | Value        | 需求值     | String   |      |
 | DemandRemark | 需求备注   | String   |      |
 
-## 4 输出参数
+## 11.4 输出参数
 
-| 参数名称   | 中文名称 | 类型   | 备注 |      |
-| ---------- | -------- | ------ | ---- | ---- |
-| StatusCode | 状态码   | int    |      |      |
-| Message    | 消息     | string |      |      |
-| Data       | 数据     | object |      |      |
+| 参数名称   | 描述   | 类型   | 备注 |      |
+| ---------- | ------ | ------ | ---- | ---- |
+| StatusCode | 状态码 | string |      |      |
+| Message    | 消息   | string |      |      |
+| Data       | 数据   | object |      |      |
 
 Status Code说明：
 
@@ -65,10 +65,10 @@ WMS接收到数据后，提供的反馈状态码：
 
 | StatusCode | 描述                              |
 | :--------- | --------------------------------- |
-| 0          | 接收成功                          |
-| -1         | 接收失败，失败时需提供Message信息 |
+| Y          | 接收成功                          |
+| N          | 接收失败，失败时需提供Message信息 |
 
-## 5 输入示例
+## 11.5 输入示例
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -217,11 +217,11 @@ WMS接收到数据后，提供的反馈状态码：
 
 
 
-## 6 返回示例
+## 11.6 返回示例
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
-	<statusCode>0</statusCode>
+	<statusCode>Y</statusCode>
 	<message>接收成功</message>
 	<data></data>
 ```
