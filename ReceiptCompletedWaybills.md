@@ -12,11 +12,15 @@
 
 ## 4.2 请求URL及方式
 
-URL：
+**URL：**api/ReceiptCompletedWaybills
 
-方式：POST
+**方式：POST**
 
 ## 4.3 输入参数
+
+**Header：**需要设置Token 参数
+
+下列是Body的参数：
 
 | 参数            | 描述     | 类型     | 示例值                           | 是否必填 | 备注                     |
 | --------------- | -------- | -------- | -------------------------------- | -------- | ------------------------ |
@@ -29,11 +33,11 @@ URL：
 | Barcode         | 条码信息 | String   | SH034178972903120S19149466281581 | 是       | SKU对应的条形码信息      |
 | Status          | 流程状态 | Enum     | 1                                | 是       | 0：正常收货，1：异常收货 |
 | Reason          | 原因     | String   | 异常收货                         | 否       | 异常收货需要提供原因     |
-| PalletId        | 托盘编号 | String   | ABSSSSS                          | 否       |                          |
+| PalletId        | 托盘编号 | String   | AQ13KS00003                      | 否       |                          |
 
 ## 4.4 输出参数
 
-**Status Code** 
+**Status Code**
 
 LMS接收到数据后，更加处理结果，提供的反馈状态码：
 
@@ -51,11 +55,9 @@ LMS接收到数据后，更加处理结果，提供的反馈状态码：
 
 LMS的响应信息
 
-**Data**： 
+**Data**：
 
-接收成功对应的是接收数据的记录数，如果失败对应失败的记录的信息。
-
-
+接收成功对应的是接收数据的记录数，如异常提示错误信息。
 
 `示例：`
 
@@ -64,48 +66,135 @@ LMS的响应信息
 `Message: "成功的记录总数 3",`
 `Data: 3`
 
-
-
 ## 4.5 请求示例
+
+支持JSON格式，请严格按照 **运单**（LoadId）+ **订单**（OrderId) + **SKU** (ItemId) 组合回传对应的条码信息
 
 ```
 [
   {
-    "loadId": "ZH-BL20190130SD0008",
-    "orderId": "542639082",
-    "itemId": "3417898",
-    "receivedQty": 3,
-    "arrivedDatetime": "2020-12-03T09:54:05",
-    "signInDatetime": "2020-12-03T09:54:05",
-    "barcode": "SH034178972903120S19149466281581",
-    "status": 0,
-    "reason": "string",
-    "palletId": "string"
+    "loadId": "ZH-BL20190130SD0008Test3",
+    "orderId": "542639083",
+    "itemId": "341789801",
+    "receivedQty": 4,
+    "arrivedDatetime": "2020-12-05T08:23:52",
+    "signInDatetime": "2020-12-05T08:23:52",
+    "receiptBarcodes": [
+      {
+        "barcode": "SH034178972903120S19149466281581",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281582",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281583",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281584",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      }
+    ]
   },
   {
-    "loadId": "ZH-BL20190130SD0008",
-    "orderId": "542639082",
-    "itemId": "3417897",
+    "loadId": "ZH-BL20190130SD0008Test3",
+    "orderId": "542639083",
+    "itemId": "341789802",
     "receivedQty": 3,
-    "arrivedDatetime": "2020-12-03T09:54:05",
-    "signInDatetime": "2020-12-03T09:54:05",
-    "barcode": "SH034178921903120S14149066381501",
-    "status": 1,
-    "reason": "",
-    "palletId": "string"
-
+    "arrivedDatetime": "2020-12-05T08:23:52",
+    "signInDatetime": "2020-12-05T08:23:52",
+    "receiptBarcodes": [
+      {
+        "barcode": "SH034178972903120S19149466281585",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00003"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281586",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00003"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281587",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00003"
+      }
+    ]
   },
   {
-    "loadId": "ZH-BL20190130SD0008",
-    "orderId": "542639082",
+    "loadId": "ZH-BL20190130SD0008Test3",
+    "orderId": "54263908302",
     "itemId": "3417898",
     "receivedQty": 3,
-    "arrivedDatetime": "2020-12-03T09:54:05",
-    "signInDatetime": "2020-12-03T09:54:05",
-    "barcode": "SH034178971903220S1914906638159",
-    "status": 1,
-    "reason": "异常收货",
-    "palletId": "ABSSSSS"
+    "arrivedDatetime": "2020-12-05T08:23:52",
+    "signInDatetime": "2020-12-05T08:23:52",
+    "receiptBarcodes": [
+      {
+        "barcode": "SH034178972903120S19149466281588",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281589",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281590",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      }
+    ]
+  },
+  {
+    "loadId": "ZH-BL20190130SD0008Test4",
+    "orderId": "54263908303",
+    "itemId": "3417898",
+    "receivedQty": 4,
+    "arrivedDatetime": "2020-12-05T08:23:52",
+    "signInDatetime": "2020-12-05T08:23:52",
+    "receiptBarcodes": [
+      {
+        "barcode": "SH034178972903120S19149466281591",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281592",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281593",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      },
+      {
+        "barcode": "SH034178972903120S19149466281594",
+        "status": 0,
+        "reason": "",
+        "palletId": "AQ13KS00002"
+      }
+    ]
   }
 ]
 ```
@@ -117,8 +206,8 @@ LMS的响应信息
 ```
 {
     "statusCode": 102,
-    "message": "成功的记录总数 3",
-    "data": "3"
+    "message": "成功的记录总数 4",
+    "data": "4"
 }
 ```
 
