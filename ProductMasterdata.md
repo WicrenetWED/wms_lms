@@ -46,7 +46,6 @@ public string ReceiveProductData(string inputData)
 | UOM                    | 产品单位     | String         |                                |
 | PackagingQty           | 包装数量     | String         |                                |
 | ShelfLife              | 保质期(天）  | Int            |                                |
-| InventBatchId          | 批次号       | String         | 如有多个批次，为逗号分隔字符串 |
 | InventOEM              | OEM          | String         |                                |
 | InventGHS              | GHS          | Boolean        | Yes or No                      |
 | InventThermal          | 保温品       | Boolean        | Yes or No                      |
@@ -91,10 +90,9 @@ WMS接收到数据后，提供的反馈状态码：
 			<MC_InventDangerous>N</MC_InventDangerous>
 			<ProductName>3366866</ProductName>
 			<OUM>Carton</OUM>
-			<InventBatchId></InventBatchId>
-            <InventFirstReviewDays></InventFirstReviewDays>
-            <InventSecondReviewDays></InventSecondReviewDays>
-            <InventThirdReviewDays></InventThirdReviewDays>
+			<InventFirstReviewDays></InventFirstReviewDays>
+			<InventSecondReviewDays></InventSecondReviewDays>
+			<InventThirdReviewDays></InventThirdReviewDays>
 		</RECORD>
 		<RECORD>
 			<ItemId>3368738-TM</ItemId>
@@ -109,10 +107,9 @@ WMS接收到数据后，提供的反馈状态码：
 			<MC_InventDangerous>N</MC_InventDangerous>
 			<ProductName>PROT SOLVENT FLUSHING OIL 6X4L</ProductName>
 			<OUM>EA</OUM>
-			<InventBatchId></InventBatchId>
-            <InventFirstReviewDays></InventFirstReviewDays>
-            <InventSecondReviewDays></InventSecondReviewDays>
-            <InventThirdReviewDays></InventThirdReviewDays>
+			 <InventFirstReviewDays></InventFirstReviewDays>
+			<InventSecondReviewDays></InventSecondReviewDays>
+			<InventThirdReviewDays></InventThirdReviewDays>
 		</RECORD> 
 	</RECORDS> 
 ```
