@@ -1,4 +1,4 @@
-# 12库存转移
+# 12 库存转移
 
 ## 12.1 接口说明
 
@@ -25,15 +25,17 @@ Header 需传参Token
 
 Body参数说明
 
-| 参数                   | 描述     | 类型   | 是否必填 | 备注           |
-| ---------------------- | -------- | ------ | -------- | -------------- |
-| ItemId                 | 物料编号 | String | 是       |                |
-| TransDate              | 日期     | String | 是       |                |
-| SourceInventLocationId | 源仓库   | String | 是       |                |
-| Quantity               | 条码数量 | int    | 是       |                |
-| TargetInventLocationId | 目标仓库 | String | 是       |                |
-| Barcode                | 条码信息 | String | 是       | 逗号分隔字符串 |
-| ExtendField            | 扩展字段 | String | 否       | 支持后期扩展   |
+| 字段名称               | 中文名   | 类型   | 是否必填 | 备注                                          |
+| ---------------------- | -------- | ------ | -------- | --------------------------------------------- |
+| ItemId                 | 物料编号 | String | 是       |                                               |
+| TransDate              | 日期     | String | 是       |                                               |
+| SourceInventLocationId | 源仓库   | String | 是       |                                               |
+| TargetInventLocationId | 目标仓库 | String | 是       | 其他出入库时非必填                            |
+| Barcode                | 条码信息 | String | 是       | 其他出入库时非必填                            |
+| Qty                    | 数量     | Int    | 是       | 正数：入库  负数：出库                        |
+| InventBatchId          | 批次号   | String | 是       | 转移日记账时非必填，出入库时必填              |
+| JournalNameId          | 日记账ID | String | 是       | Transfer ： 转移日记账       Move：其他出入库 |
+| ExtendField            | 扩展字段 | String | 否       | 支持后期扩展                                  |
 
 ## 12.4 输出参数
 
@@ -65,32 +67,24 @@ LMS接收到数据后，更新处理结果，提供的反馈状态码：
 
 ```json
 [{
+    "JournalNameId":"Transfer",
 	"ItemId": "3383840",
 	"TransDate": "2020-12-04",
 	"SourceInventLocationId": "CNCS2420",
 	"TargetInventLocationId": "CNCS2421",
+    "Qty":1
 	"Barcode": "SZ03383840181226229041266130912",
-	"ExtendField": null
+    "InventBatchId" null,
+	"ExtendField": null 
 }, {
-	"ItemId": "3383840",
-	"TransDate": "2020-12-04",
-	"SourceInventLocationId": "CNCS2420",
-	"TargetInventLocationId": "CNCS2421",
-	"Barcode": "SZ03383840181226229041266130929",
-	"ExtendField": null
-}, {
+    "JournalNameId":"Move",
 	"ItemId": "3385025",
-	"TransDate": "2020-12-04",
+	"TransDate": "2020-12-05",
 	"SourceInventLocationId": "CNCS2420",
-	"TargetInventLocationId": "CNCS2421",
-	"Barcode": "SZ03385025181226229032921057138",
-	"ExtendField": null
-}, {
-	"ItemId": "3385025",
-	"TransDate": "2020-12-04",
-	"SourceInventLocationId": "CNCS2420",
-	"TargetInventLocationId": "CNCS2421",
-	"Barcode": "SZ03385025181226229032921057168",
+	"TargetInventLocationId": null,
+     "Qty":20
+	"Barcode": null,
+    "InventBatchId" 18122622
 	"ExtendField": null
 }]
 ```

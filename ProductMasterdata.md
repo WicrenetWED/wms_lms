@@ -36,25 +36,25 @@ public string ReceiveProductData(string inputData)
 
 ## 10.3 输入参数  
 
-| 参数名称                 | 描述         | 类型           | 备注                           |
-| ------------------------ | ------------ | -------------- | ------------------------------ |
-| ItemId                   | 物料编号     | String         |                                |
-| ProductName              | 产品名称     | String         |                                |
-| Volume                   | 产品升数     | decimal(18, 4) |                                |
-| Packing                  | 包装规格     | Float          |                                |
-| PackagingGroup           | 包装组       | String         |                                |
-| UOM                      | 产品单位     | String         |                                |
-| PackagingQty             | 包装数量     | String         |                                |
-| ShelfLife                | 保质期(天）  | Int            |                                |
-| InventBatchId            | 批次号       | String         | 如有多个批次，为逗号分隔字符串 |
-| InventOEM                | OEM          | String         |                                |
-| InventGHS                | GHS          | Boolean        | Yes or No                      |
-| InventThermal            | 保温品       | Boolean        | Yes or No                      |
-| InventFirstReviewDays    | 首次复检(天) | Int            |                                |
-| InventSecondReviewDays   | 二次复检(天) | Int            |                                |
-| MC_InventThirdReviewDays | 三次复检(天) | Int            |                                |
-| InventDangerous          | 危险品       | Enum           | N, DG9,DG3                     |
-| ExtendField              | 扩展字段     | String         | 支持后期扩展                   |
+| 参数名称               | 描述         | 类型           | 备注                           |
+| ---------------------- | ------------ | -------------- | ------------------------------ |
+| ItemId                 | 物料编号     | String         |                                |
+| ProductName            | 产品名称     | String         |                                |
+| Volume                 | 产品升数     | decimal(18, 4) |                                |
+| Packing                | 包装规格     | Float          |                                |
+| PackagingGroup         | 包装组       | String         |                                |
+| UOM                    | 产品单位     | String         |                                |
+| PackagingQty           | 包装数量     | String         |                                |
+| ShelfLife              | 保质期(天）  | Int            |                                |
+| InventBatchId          | 批次号       | String         | 如有多个批次，为逗号分隔字符串 |
+| InventOEM              | OEM          | String         |                                |
+| InventGHS              | GHS          | Boolean        | Yes or No                      |
+| InventThermal          | 保温品       | Boolean        | Yes or No                      |
+| InventFirstReviewDays  | 首次复检(天) | Int            |                                |
+| InventSecondReviewDays | 二次复检(天) | Int            |                                |
+| InventThirdReviewDays  | 三次复检(天) | Int            |                                |
+| InventDangerous        | 危险品       | Enum           | N, DG9,DG3                     |
+| ExtendField            | 扩展字段     | String         | 支持后期扩展                   |
 
 ## 10.4 输出参数
 
@@ -92,6 +92,9 @@ WMS接收到数据后，提供的反馈状态码：
 			<ProductName>3366866</ProductName>
 			<OUM>Carton</OUM>
 			<InventBatchId></InventBatchId>
+            <InventFirstReviewDays></InventFirstReviewDays>
+            <InventSecondReviewDays></InventSecondReviewDays>
+            <InventThirdReviewDays></InventThirdReviewDays>
 		</RECORD>
 		<RECORD>
 			<ItemId>3368738-TM</ItemId>
@@ -107,6 +110,9 @@ WMS接收到数据后，提供的反馈状态码：
 			<ProductName>PROT SOLVENT FLUSHING OIL 6X4L</ProductName>
 			<OUM>EA</OUM>
 			<InventBatchId></InventBatchId>
+            <InventFirstReviewDays></InventFirstReviewDays>
+            <InventSecondReviewDays></InventSecondReviewDays>
+            <InventThirdReviewDays></InventThirdReviewDays>
 		</RECORD> 
 	</RECORDS> 
 ```
