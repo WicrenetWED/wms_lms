@@ -1,5 +1,5 @@
-title: LMS与WMS接口开发文档
-description: 接口相关定义及开发规范
+title: BP LMS与3PL WMS接口开发技术文档
+description: 技术规范包括入库通知下发、收货完成、发货通知、确认出仓、反馈盘点结果、冻结解冻不良品、产品及CRM主数据、库存转移、SDS&QAC文件同步等接口相关定义及开发规范
 theme: jekyll-theme-cayman
 name: LMS与WMS接口
 github:
