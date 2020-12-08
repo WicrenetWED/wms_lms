@@ -11,7 +11,7 @@
 
 ## 12.2 请求URL与方法
 
-**Url**: /api/InventCountJournal
+**Url**: /api/InventTransferJournal
 
 **方法**：Post
 

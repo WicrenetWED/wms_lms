@@ -20,7 +20,7 @@
 方法声明示例： 
 
 ```C#
-public string ReceiveProductData(string inputData)
+public string RecieveProductMasterData(string inputData)
 ```
 
 **协议：soap协议**
